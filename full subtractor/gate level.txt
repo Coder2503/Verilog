@@ -1,0 +1,54 @@
+//basic AOI logic gates
+module fs(d,bo,a,b,c);
+	input a,b,c;
+	output d,bo;
+	wire p,q,r,t,d1,bo1,bo2,u,v,w,x;
+	not(p,a);
+	not(q,b);
+	and(r,a,q);
+	and(t,p,b);
+	or(d1,r,t);
+	and(bo1,p,b);
+
+	not(u,d1);
+	not(v,c);
+	and(w,d1,v);
+	and(x,u,c);
+	or(d,w,x);
+	and(bo2,u,c);
+	or(bo,bo1,bo2);
+endmodule
+
+
+//derived logic gates
+module fs(d,bo,a,b,c);
+	input a,b,c;
+	output d,bo;
+	wire p,q,r,t,u;
+	xor(d,a,b,c);
+	xor(p,a,b);
+	not(q,p);
+	and(r,q,c);
+	not(t,a);
+	and(u,t,b);
+	or(bo,r,u);
+endmodule
+
+
+//nand gates
+module fs(d,bo,a,b,c);
+	input a,b,c;
+	output d,cy;
+	wire p,q,r,d1,t,u,v;
+	nand(p,a,b);
+	nand(q,p,a);
+	nand(r,p,b);
+	nand(d1,q,r);
+		
+	nand(t,d1,c);
+	nand(u,t,d1);
+	nand(v,t,c);
+	nand(d,u,v);
+	
+	nand(bo,r,v);
+endmodule

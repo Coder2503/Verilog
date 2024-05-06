@@ -1,0 +1,26 @@
+module updown(Q,led,clk,clear,up_down);
+	input clk,clear,up_down;
+	output reg [3:0]Q;
+	output reg led=0;
+	reg [25:0]cnt=25'd0;
+	always@(posedge clk)
+	begin
+		cnt<=cnt+1;
+		if(cnt==25'd12000000)
+		begin
+			led=~led;
+			cnt<=0;
+		end
+	end
+	always@(posedge led)
+	begin
+		if(clear&up_down)
+		Q<=0;
+		else if(clear&~up_down)
+		Q<=4'b1111;
+		else if(up_down)
+		Q<=Q+1;
+		else
+		Q<=Q-1;
+	end
+endmodule

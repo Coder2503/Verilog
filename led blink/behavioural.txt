@@ -1,0 +1,14 @@
+module blink(led,clk);
+	input clk;
+	output reg led=0;
+	reg [25:0]cnt=25'd0;
+	always@(posedge clk)
+	begin
+		cnt<=cnt+1;
+		if(cnt==25'd12000000)
+		begin
+			led=~led;
+			cnt<=0;
+		end
+	end
+endmodule

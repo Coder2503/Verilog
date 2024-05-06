@@ -1,0 +1,14 @@
+module tbhs;
+	reg a,b;
+	wire d,bo;
+	hs hs1(d,bo,a,b);
+	initial begin
+		$display("A B Bo D");
+		$monitor(a," ",b," ",bo," ",d);
+		a=0;b=0;
+		#10 b=1;
+		#10 a=1;b=0;
+		#10 b=1;
+		#10 $finish;
+	end
+endmodule

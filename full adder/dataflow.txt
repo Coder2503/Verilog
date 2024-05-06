@@ -1,0 +1,15 @@
+//using addition(+)
+module fa(s,cy,a,b,c);
+	input a,b,c;
+	output s,cy;
+	assign {cy,s}=a+b+c;
+endmodule
+
+
+//operators
+module fa(s,cy,a,b,c);
+	input a,b,c;
+	output s,cy;
+	assign s=a^b^c;
+	assign cy=a&b|(a^b)&c;
+endmodule

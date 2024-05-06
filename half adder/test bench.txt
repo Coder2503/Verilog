@@ -1,0 +1,14 @@
+module tbha;
+	reg a,b;
+	wire s,cy;
+	ha ha1(s,cy,a,b);
+	initial begin
+		$display("A B CY S");
+		$monitor(a," ",b," ",cy," ",s);
+		a=0;b=0
+		#10 b=1;
+		#10 a=1;b=0;
+		#10 b=1;
+		#10 $finish;
+	end
+endmodule

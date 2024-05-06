@@ -1,0 +1,15 @@
+module tbmux;
+	reg [3:0]I=0;
+	reg [1:0]S=0;
+	wire Y;
+	mux4x1 mux1(Y,I,S);
+	always begin
+		$monitor("I : %b",I);
+		$monitor("S : %b  Y : %b",S,Y);
+	end
+	always #10 S[0]=~S[0];
+	always #20 S[1]=~S[1];
+	I=4'b1000;
+	#40 I=4'b0010;
+	#80 $finish;
+endmodule
