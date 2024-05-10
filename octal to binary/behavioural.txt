@@ -2,7 +2,7 @@
 module oct2bin(Y,I);
 	input [7:0]I;
 	output reg [2:0]Y;
-	always@(*)
+	always@(I)
 	begin
 		case(I)
 		8'b00000001:Y=3'd0;
