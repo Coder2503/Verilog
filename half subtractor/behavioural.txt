@@ -2,7 +2,7 @@
 module hs(d,bo,a,b);
 	input a,b;
 	output reg d,bo;
-	always@(a or b)
+	always@(a or b)//always@(*)
 	begin
 		d=a^b;
 		bo=~a&b;
@@ -14,7 +14,7 @@ endmodule
 module hs(d,bo,a,b);
 	input a,b;
 	output reg d,bo;
-	always@(a or b)
+	always@(a or b)//always@(*)
 	begin
 		case({a,b})
 		2'b00:begin d=0;bo=0; end
