@@ -4,7 +4,7 @@ module tboct2bin;
 	oct2bin encoder1(Y,I);
 	initial begin
 		$display("I7 I6 I5 I4 I3 I2 I1 I0  Y2 Y1 Y0");
-		$monitor(I[7]," ",I[6]," ",I[5]," ",I[4]," ",I[3]," ",I[2]," ",I[1]," ",I[0]," ",Y[2]," ",Y[1]," "Y[0]);
+		$monitor(I[7],"  ",I[6],"  ",I[5],"  ",I[4],"  ",I[3],"  ",I[2],"  ",I[1],"  ",I[0],"   ",Y[2],"   ",Y[1],"   ",Y[0]);
 		I[0]=1;
 		#10 I[1]=1;I[0]=0;
 		#10 I[2]=1;I[1]=0;
