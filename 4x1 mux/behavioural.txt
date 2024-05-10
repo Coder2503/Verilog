@@ -3,7 +3,7 @@ module mux4x1(Y,I,S);
 	input [3:0]I;
 	input [1:0]S;
 	output reg Y;
-	always@(*)
+	always@(I or S)//always@(*)
 	begin
 		assign Y=S[1]?(S[0]?I[3]:I[2]):(S[0]?I[1]:I[0]);
 	end
@@ -15,7 +15,7 @@ module mux4x1(Y,I,S);
 	input [3:0]I;
 	input [1:0]S;
 	output reg Y;
-	always@(*)
+	always@(I or S)//always@(*)
 	begin
 		case(S)
 		2'b00:Y=I[0];
