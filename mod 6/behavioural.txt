@@ -14,7 +14,7 @@ module mod6(Q,led,clk,clear);
 	end
 	always@(posedge led)
 	begin
-		if(clear|Q=3'd6)
+		if(clear|Q=3'd5)
 		Q<=0;
 		else
 		Q<=Q+1;
