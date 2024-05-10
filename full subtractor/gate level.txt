@@ -38,7 +38,7 @@ endmodule
 //nand gates
 module fs(d,bo,a,b,c);
 	input a,b,c;
-	output d,cy;
+	output d,bo;
 	wire p,q,r,d1,t,u,v;
 	nand(p,a,b);
 	nand(q,p,a);
