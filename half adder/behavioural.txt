@@ -2,7 +2,7 @@
 module ha(s,cy,a,b);
 	input a,b;
 	output reg s,cy;
-	always@(a or b)
+	always@(a or b)//always@(*)
 	begin
 		s=a^b;
 		cy=a&b;
@@ -14,7 +14,7 @@ endmodule
 module ha(s,cy,a,b);
 	input a,b;
 	output reg s,cy;
-	always@(a or b)
+	always@(a or b)//always@(*)
 	begin
 		case({a,b})
 		2'b00:begin s=0;cy=0; end
