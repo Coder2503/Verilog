@@ -29,7 +29,7 @@ module fa(s,cy,a,b,c);
 	xor(p,a,b);
 	and(q,p,c);
 	and(r,a,b);
-	or(cy.q.r);
+	or(cy,q,r);
 endmodule
 
 
