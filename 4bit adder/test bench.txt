@@ -6,10 +6,11 @@ module tbadd4bit;
 	add4bit add1(s,cout,a,b,cin);
 	initial begin
 	$display("A3 A2 A1 A0 B3 B2 B1 B0 Cin  Cout S3 S2 S1 S0");
-	$display(a[3]," ",a[2]," ",a[1]," ",a[0]," ",b[3]," ",b[2]," ",b[1]," ",b[0],"  ",cin,"   ",cout,"  ",s[3]," ",s[2]," ",s[1]," ",s[0]);
+	$monitor(a[3],"   ",a[2],"   ",a[1],"    ",a[0],"    ",b[3],"    ",b[2],"   ",b[1],"   ",b[0],"    ",cin,"      ",cout,"    ",s[3],"   ",s[2],"   ",s[1],"   ",s[0]);
 	a=4'd12;b=4'd9;cin=0;
 	#10 a=4'd10;b=4'd7;cin=1;
 	#10 a=4'd4;b=4'd3;cin=0;
 	#10 a=4'd14;b=4'd8;cin=1;
+	#10 $finish;
 	end
 endmodule
