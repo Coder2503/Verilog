@@ -5,7 +5,7 @@ module tbha;
 	initial begin
 		$display("A B CY S");
 		$monitor(a," ",b," ",cy," ",s);
-		a=0;b=0
+		a=0;b=0;
 		#10 b=1;
 		#10 a=1;b=0;
 		#10 b=1;
